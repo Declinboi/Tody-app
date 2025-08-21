@@ -1,7 +1,7 @@
 {
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
+  "@@locale": "es",
+  "feedAppBarTitle": "Noticias",
+  "homeNavBarItemLabel": "Inicio",
+  "searchNavBarItemLabel": "Buscar",
+  "likesCountText": "{count, plural, one {# me gusta} other {# me gusta}}"
 }

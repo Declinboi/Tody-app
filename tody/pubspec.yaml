@@ -7,13 +7,21 @@ environment:
   sdk: ^3.8.0
 
 dependencies:
+  animations: ^2.0.11
+  app_ui:
+    path: packages/app_ui 
+  shared: 
+    path: packages/shared   
   bloc: ^9.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
+  go_router: ^16.2.0
   intl: ^0.20.2
+  path_provider: ^2.1.5
+  hydrated_bloc: ^10.1.1
 
 dev_dependencies:
   bloc_test: ^10.0.0
@@ -25,3 +33,10 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+
+  # localization config
+l10n:
+  arb-dir: lib/l10n
+  template-arb-file: app_en.arb
+  output-localization-file: app_localizations.dart
+
