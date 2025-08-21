@@ -31,10 +31,6 @@ class AppView extends StatelessWidget {
                   title: 'TODY',
                   routerConfig: routerConfig,
                   builder: (context, child) {
-                    // WidgetsBinding.instance.addPostFrameCallback(
-                    //   (_) => initUtilities(context, locale),
-                    // );
-
                     return Stack(
                       children: [
                         child!,

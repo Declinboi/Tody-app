@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tody/app/app.dart';
-import 'package:tody/counter/view/counter_page.dart';
+import 'package:tody/auth/firstpage/firstscreen.dart';
+
+
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
@@ -23,7 +25,7 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.auth.route,
             name: AppRoutes.auth.name,
-            builder: (context, state) => const CounterPage(),
+            builder: (context, state) => const Firstscreen(),
           ),
           // GoRoute(
           //   path: AppRoutes.userProfile.path!,
