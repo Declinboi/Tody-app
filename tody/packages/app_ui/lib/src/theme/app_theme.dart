@@ -209,6 +209,18 @@ class SystemUiOverlayTheme {
     systemNavigationBarIconBrightness: Brightness.light,
   );
 
+
+
+//  /// Defines Splash screen SystemUiOverlayStyle (green top + bottom bars).
+//   static const SystemUiOverlayStyle splashSystemBarTheme =
+//       SystemUiOverlayStyle(
+//     statusBarColor: AppColors.green,
+//     statusBarIconBrightness: Brightness.light,
+//     systemNavigationBarColor: AppColors.green,
+//     systemNavigationBarIconBrightness: Brightness.light,
+//   );
+
+
   /// Defines a portrait only orientation for any device.
   static void setPortraitOrientation() {
     SystemChrome.setPreferredOrientations(
@@ -216,3 +228,4 @@ class SystemUiOverlayTheme {
     );
   }
 }
+

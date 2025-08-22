@@ -95,6 +95,14 @@ class $AssetsImagesGen {
   AssetGenImage get chatBackgroundLightOverlay =>
       const AssetGenImage('assets/images/chat_background_light_overlay.png');
 
+  /// File path: assets/images/front_logo.png
+  AssetGenImage get frontLogo =>
+      const AssetGenImage('assets/images/front_logo.png');
+
+  /// File path: assets/images/secondscreen.png
+  AssetGenImage get secondScreen =>
+      const AssetGenImage('assets/images/secondscreen.png');
+
   /// File path: assets/images/instagram_text_logo.svg
   SvgGenImage get instagramTextLogo =>
       const SvgGenImage('assets/images/instagram_text_logo.svg');
@@ -112,6 +120,8 @@ class $AssetsImagesGen {
     chatBackgroundLightMask,
     chatBackgroundDarkMask,
     chatBackgroundLightOverlay,
+    frontLogo,
+    secondScreen,
     instagramTextLogo,
     placeholder,
     profilePhoto,

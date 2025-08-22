@@ -35,6 +35,9 @@ abstract class AppColors {
   /// Primary dark blue color.
   static const Color primaryDarkBlue = Color(0xff1c1e22);
 
+  /// The green color.
+  static const Color green = Color(0xFF00A9A5);
+
   /// Grey.
   static const Color grey = Colors.grey;
 

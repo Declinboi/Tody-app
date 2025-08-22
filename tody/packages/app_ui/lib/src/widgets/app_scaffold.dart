@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_positional_boolean_parameters
+// ignore_for_file: avoid_positional_boolean_parameters, public_member_api_docs, avoid_bool_literals_in_conditional_expressions
 
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
@@ -182,27 +182,27 @@ class _MaterialScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: extendBody,
-      extendBodyBehindAppBar: extendBodyBehindAppBar,
-      body: withSafeArea
-          ? SafeArea(
-              top: top,
-              bottom: bottom,
-              right: right,
-              left: left,
-              child: body,
-            )
-          : body,
-      backgroundColor: backgroundColor,
-      floatingActionButton: floatingActionButton,
-      floatingActionButtonLocation: floatingActionButtonLocation,
-      bottomNavigationBar: bottomNavigationBar,
-      appBar: appBar,
-      drawer: drawer,
-      bottomSheet: bottomSheet,
-    )
+          extendBody: extendBody,
+          extendBodyBehindAppBar: extendBodyBehindAppBar,
+          body: withSafeArea
+              ? SafeArea(
+                  top: top,
+                  bottom: bottom,
+                  right: right,
+                  left: left,
+                  child: body,
+                )
+              : body,
+          backgroundColor: backgroundColor,
+          floatingActionButton: floatingActionButton,
+          floatingActionButtonLocation: floatingActionButtonLocation,
+          bottomNavigationBar: bottomNavigationBar,
+          appBar: appBar,
+          drawer: drawer,
+          bottomSheet: bottomSheet,
+        )
         .withPopScope(onPopInvokedWithResult, canPop: canPop)
-        .withAdaptiveSystemTheme(context);
+        .withAdaptiveSystemTheme(context, backgroundColor: backgroundColor);
   }
 }
 
@@ -212,28 +212,49 @@ extension PopScopeX on Widget {
   Widget withPopScope(
     void Function(bool, dynamic)? onPopInvokedWithResult, {
     bool? canPop,
-  }) =>
-      onPopInvokedWithResult == null && canPop == null
-          ? this
-          : PopScope(
-              onPopInvokedWithResult: onPopInvokedWithResult,
-              canPop: canPop ?? true,
-              child: this,
-            );
+  }) => onPopInvokedWithResult == null && canPop == null
+      ? this
+      : PopScope(
+          onPopInvokedWithResult: onPopInvokedWithResult,
+          canPop: canPop ?? true,
+          child: this,
+        );
 }
 
-/// Extension used to respectively change the `systemNavigationBar` theme.
+// ignore: public_member_api_docs
 extension SystemNavigationBarTheme on Widget {
-  /// Overrides default [SystemUiOverlayStyle] with adaptive values.
-  Widget withAdaptiveSystemTheme(BuildContext context) =>
-      AnnotatedRegion<SystemUiOverlayStyle>(
-        value: context.theme.platform == TargetPlatform.android
-            ? context.isLight
-                ? SystemUiOverlayTheme.androidLightSystemBarTheme
-                : SystemUiOverlayTheme.androidDarkSystemBarTheme
-            : context.isLight
-                ? SystemUiOverlayTheme.iOSDarkSystemBarTheme
-                : SystemUiOverlayTheme.iOSLightSystemBarTheme,
-        child: this,
-      );
+  Widget withAdaptiveSystemTheme(
+    BuildContext context, {
+    Color? backgroundColor,
+  }) {
+    final isLight = context.isLight;
+
+    // If background is white or very light, force dark icons
+    final bool useDarkIcons =
+        (backgroundColor != null && backgroundColor.computeLuminance() > 0.8)
+        ? true
+        : isLight;
+
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        // 👇 Background color of status bar
+        statusBarColor: backgroundColor ?? Colors.transparent,
+
+        // 👇 Android status bar icons (battery, time, etc.)
+        statusBarIconBrightness: useDarkIcons
+            ? Brightness.dark
+            : Brightness.light,
+
+        // 👇 iOS status bar icons
+        statusBarBrightness: useDarkIcons ? Brightness.light : Brightness.dark,
+
+        // 👇 Navigation bar color + icons (bottom area)
+        systemNavigationBarColor: backgroundColor ?? Colors.transparent,
+        systemNavigationBarIconBrightness: useDarkIcons
+            ? Brightness.dark
+            : Brightness.light,
+      ),
+      child: this,
+    );
+  }
 }
