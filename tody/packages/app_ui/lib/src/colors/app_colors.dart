@@ -41,6 +41,8 @@ abstract class AppColors {
   /// Grey.
   static const Color grey = Colors.grey;
 
+  static const Color shadeGrey = Color.fromRGBO(245, 245, 245, 1);
+
   /// The bright grey color.
   static const Color brightGrey = Color.fromARGB(255, 224, 224, 224);
 

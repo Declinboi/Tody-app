@@ -44,6 +44,8 @@ class $AssetsIconsGen {
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
 
+  SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
+
   /// File path: assets/icons/instagram-reel.svg
   SvgGenImage get instagramReel =>
       const SvgGenImage('assets/icons/instagram-reel.svg');
@@ -71,6 +73,7 @@ class $AssetsIconsGen {
     check,
     github,
     google,
+    facebook,
     instagramReel,
     search,
     setting,
@@ -103,6 +106,12 @@ class $AssetsImagesGen {
   AssetGenImage get secondScreen =>
       const AssetGenImage('assets/images/secondscreen.png');
 
+  AssetGenImage get thirdScreen =>
+      const AssetGenImage('assets/images/thirdscreen.png');
+
+  AssetGenImage get welcomeScreen =>
+      const AssetGenImage('assets/images/welcome.png');
+
   /// File path: assets/images/instagram_text_logo.svg
   SvgGenImage get instagramTextLogo =>
       const SvgGenImage('assets/images/instagram_text_logo.svg');
@@ -122,6 +131,8 @@ class $AssetsImagesGen {
     chatBackgroundLightOverlay,
     frontLogo,
     secondScreen,
+    thirdScreen,
+    welcomeScreen,
     instagramTextLogo,
     placeholder,
     profilePhoto,

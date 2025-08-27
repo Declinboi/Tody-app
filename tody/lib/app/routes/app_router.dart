@@ -7,8 +7,13 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tody/app/app.dart';
+import 'package:tody/auth/signup/email_page.dart';
 // import 'package:tody/auth/firstpage/firstscreen.dart';
-import 'package:tody/auth/firstpage/secondscreen.dart';
+import 'package:tody/auth/onboarding/secondscreen.dart';
+import 'package:tody/auth/onboarding/thirdscreen.dart';
+import 'package:tody/auth/onboarding/welcome_page.dart';
+import 'package:tody/auth/signup/signup_page.dart';
+import 'package:tody/auth/view/auth_view.dart';
 
 
 
@@ -26,7 +31,7 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.auth.route,
             name: AppRoutes.auth.name,
-            builder: (context, state) => const Secondscreen(),
+            builder: (context, state) => const AuthPage(),
           ),
           // GoRoute(
           //   path: AppRoutes.userProfile.path!,

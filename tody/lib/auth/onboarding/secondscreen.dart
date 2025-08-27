@@ -1,18 +1,26 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+// import 'package:tody/auth/onboarding/thirdscreen.dart';
 
 class Secondscreen extends StatelessWidget {
-  const Secondscreen({super.key});
+  const Secondscreen({
+    required this.onContinueWithThird,
+    super.key, // 👈 add this, super.key,
+  });
+
+  final VoidCallback onContinueWithThird;
 
   @override
   Widget build(BuildContext context) {
-    return const OnboardingScreen();
+    return OnboardingScreen(
+      onContinueWithThird: onContinueWithThird, // 👈 forward it
+    );
   }
 }
 
 class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({super.key});
-
+  const OnboardingScreen({required this.onContinueWithThird, super.key});
+  final VoidCallback onContinueWithThird;
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
@@ -100,9 +108,7 @@ class OnboardingScreen extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 24),
-            const SizedBox(height: 24),
-            const SizedBox(height: 24 * 2),
+            const Spacer(),
 
             /// Continue button
             SizedBox(
@@ -110,9 +116,7 @@ class OnboardingScreen extends StatelessWidget {
               height: 56,
               child: AppButton.primary(
                 text: 'Continue',
-                onPressed: () {
-                  // your action
-                },
+                onPressed: onContinueWithThird,
               ),
             ),
           ],

@@ -78,10 +78,12 @@ class AppButton extends StatelessWidget {
   AppButton.primary({
     required String text,
     required VoidCallback? onPressed,
+    Widget? icon, // 👈 allow icon
     Key? key,
   }) : this(
          text: text,
          onPressed: onPressed,
+         icon: icon, // 👈 pass it down
          style: ElevatedButton.styleFrom(
            // ⛔ runtime
            minimumSize: const Size(327, 56),
