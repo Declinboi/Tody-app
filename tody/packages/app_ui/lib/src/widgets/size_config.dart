@@ -87,7 +87,7 @@ class SizeConfig {
   }
 
   // Add init() alias for convenience
-  static Future<void> init() async {
-    await initDeviceInfo();
-  }
+  // static Future<void> init() async {
+  //   await initDeviceInfo();
+  // }
 }

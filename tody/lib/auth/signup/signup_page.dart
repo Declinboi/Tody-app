@@ -106,6 +106,7 @@ class SignupPage extends StatelessWidget {
                 onPressed: onContinueWithTheme,
               ),
             ),
+            SizedBox(height: SizeConfig.responsiveSize(25)),
           ],
         ),
       ),

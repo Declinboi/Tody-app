@@ -54,13 +54,13 @@ class OnboardingScreen2 extends StatelessWidget {
              Padding(
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
                     'Find the practicality in\nmaking your todo list',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: SizeConfig.responsiveSize(26),
+                      fontSize: SizeConfig.responsiveSize(24),
                       fontWeight: FontWeight.bold,
                       color: AppColors.black,
                       height: 1.4,
@@ -76,7 +76,7 @@ class OnboardingScreen2 extends StatelessWidget {
               'Easy-to-understand user interface that makes you\nmore comfortable when you want to create a task or\nto do list, Todyapp can also improve productivity',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: SizeConfig.responsiveSize(14),
+                fontSize: SizeConfig.responsiveSize(12),
                 color: Colors.grey,
                 height: 1.5,
               ),
@@ -106,6 +106,8 @@ class OnboardingScreen2 extends StatelessWidget {
                 onPressed: onContinueWithWelcome,
               ),
             ),
+
+            SizedBox(height: SizeConfig.responsiveSize(25)),
           ],
         ),
       ),

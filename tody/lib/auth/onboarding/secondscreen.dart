@@ -67,13 +67,13 @@ class OnboardingScreen extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
                           'Your convenience in\nmaking a todo list',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: SizeConfig.responsiveSize(26),
+                            fontSize: SizeConfig.responsiveSize(24),
                             fontWeight: FontWeight.bold,
                             color: AppColors.black,
                             height: 1.4,
@@ -87,13 +87,12 @@ class OnboardingScreen extends StatelessWidget {
             ),
 
             // SizedBox(height: SizeConfig.responsiveSize(4)),
-
             Text(
-              'Here’s a mobile platform that helps you create task\nor to do list '
+              'Here’s a mobile platform that helps you create task\nor to do list'
               'so that it can help you in every job\neasier and faster.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: SizeConfig.responsiveSize(14),
+                fontSize: SizeConfig.responsiveSize(12),
                 color: Colors.grey,
                 height: 1.5,
               ),
@@ -122,6 +121,7 @@ class OnboardingScreen extends StatelessWidget {
                 onPressed: onContinueWithThird,
               ),
             ),
+            SizedBox(height: SizeConfig.responsiveSize(25)),
           ],
         ),
       ),

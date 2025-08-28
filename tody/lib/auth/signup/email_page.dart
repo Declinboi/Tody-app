@@ -1,6 +1,5 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:tody/auth/signup/signup_page.dart';
 
 class EmailPage extends StatelessWidget {
   const EmailPage({required this.onContinueWithSignup, super.key});
@@ -86,6 +85,7 @@ class EmailPage extends StatelessWidget {
                 onPressed: onContinueWithSignup,
               ),
             ),
+            SizedBox(height: SizeConfig.responsiveSize(25)),
           ],
         ),
       ),
