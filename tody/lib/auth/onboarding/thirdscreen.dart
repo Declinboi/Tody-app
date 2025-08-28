@@ -41,16 +41,17 @@ class OnboardingScreen2 extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+
+            SizedBox(height: SizeConfig.responsiveSize(24)),
 
             /// The image
             Assets.images.thirdScreen.image(
-              height: 360.98,
-              width: 375,
+              height:  SizeConfig.responsiveSize(361),
+              width: SizeConfig.responsiveSize(375),
               fit: BoxFit.cover,
             ),
 
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -59,7 +60,7 @@ class OnboardingScreen2 extends StatelessWidget {
                     'Find the practicality in\nmaking your todo list',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 26,
+                      fontSize: SizeConfig.responsiveSize(26),
                       fontWeight: FontWeight.bold,
                       color: AppColors.black,
                       height: 1.4,
@@ -68,18 +69,21 @@ class OnboardingScreen2 extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 12),
-            const Text(
+
+            SizedBox(height: SizeConfig.responsiveSize(12)),
+
+            Text(
               'Easy-to-understand user interface that makes you\nmore comfortable when you want to create a task or\nto do list, Todyapp can also improve productivity',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: SizeConfig.responsiveSize(14),
                 color: Colors.grey,
                 height: 1.5,
               ),
             ),
 
-            const SizedBox(height: 35),
+            SizedBox(height: SizeConfig.responsiveSize(35)),
+
 
             /// Page indicators
             Row(
@@ -96,7 +100,7 @@ class OnboardingScreen2 extends StatelessWidget {
             /// Continue button
             SizedBox(
               width: double.infinity,
-              height: 56,
+              height: SizeConfig.responsiveSize(56),
               child: AppButton.primary(
                 text: 'Continue',
                 onPressed: onContinueWithWelcome,

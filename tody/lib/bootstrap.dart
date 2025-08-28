@@ -34,7 +34,7 @@ Future<void> bootstrap(AppBuilder builder) async {
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
-
+      await SizeConfig.init();
       final storage = await HydratedStorage.build(
         storageDirectory: kIsWeb
             ? HydratedStorageDirectory.web

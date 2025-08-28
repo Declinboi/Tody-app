@@ -23,6 +23,7 @@ class OnboardingScreen extends StatelessWidget {
   final VoidCallback onContinueWithThird;
   @override
   Widget build(BuildContext context) {
+    // SizeConfig.init();
     return AppScaffold(
       // top: true,
       backgroundColor: AppColors.white,
@@ -45,20 +46,21 @@ class OnboardingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+
+            SizedBox(height: SizeConfig.responsiveSize(24)),
 
             Stack(
               alignment: Alignment.topCenter,
               children: [
                 /// The image
                 Assets.images.secondScreen.image(
-                  height: 452.98,
-                  width: 375,
+                  height: SizeConfig.responsiveSize(453), // instead of 452.98
+                  width: SizeConfig.responsiveSize(375),
                   fit: BoxFit.cover,
                 ),
 
                 /// Text placed on top of the image
-                const Positioned(
+                Positioned(
                   bottom: 25, // 👈 move upward/downward by adjusting this value
                   left: 0,
                   right: 0,
@@ -71,7 +73,7 @@ class OnboardingScreen extends StatelessWidget {
                           'Your convenience in\nmaking a todo list',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 26,
+                            fontSize: SizeConfig.responsiveSize(26),
                             fontWeight: FontWeight.bold,
                             color: AppColors.black,
                             height: 1.4,
@@ -84,19 +86,20 @@ class OnboardingScreen extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 12),
-            const Text(
+            // SizedBox(height: SizeConfig.responsiveSize(4)),
+
+            Text(
               'Here’s a mobile platform that helps you create task\nor to do list '
               'so that it can help you in every job\neasier and faster.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: SizeConfig.responsiveSize(14),
                 color: Colors.grey,
                 height: 1.5,
               ),
             ),
 
-            const SizedBox(height: 35),
+            SizedBox(height: SizeConfig.responsiveSize(35)),
 
             /// Page indicators
             Row(
@@ -113,7 +116,7 @@ class OnboardingScreen extends StatelessWidget {
             /// Continue button
             SizedBox(
               width: double.infinity,
-              height: 56,
+              height: SizeConfig.responsiveSize(56),
               child: AppButton.primary(
                 text: 'Continue',
                 onPressed: onContinueWithThird,

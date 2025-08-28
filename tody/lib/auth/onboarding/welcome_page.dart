@@ -6,7 +6,6 @@ class WelcomePage extends StatelessWidget {
   const WelcomePage({required this.onContinueWithEmail, super.key});
   final VoidCallback onContinueWithEmail;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,18 +16,18 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: SizeConfig.responsiveSize(40)),
 
               // Title
               RichText(
                 textAlign: TextAlign.center,
-                text: const TextSpan(
+                text: TextSpan(
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: SizeConfig.responsiveSize(28),
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
                   ),
-                  children: [
+                  children: const [
                     TextSpan(text: 'Welcome to '),
                     TextSpan(
                       text: 'Todyapp',
@@ -38,12 +37,12 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 30 * 2),
+              SizedBox(height: SizeConfig.responsiveSize(30 * 2)),
 
               // Illustration image
               Assets.images.welcomeScreen.image(
-                height: 452.98,
-                width: 375,
+                height: SizeConfig.responsiveSize(453),
+                width: SizeConfig.responsiveSize(375),
                 fit: BoxFit.cover,
               ),
               const Spacer(),
@@ -51,7 +50,7 @@ class WelcomePage extends StatelessWidget {
               // Continue with email button
               SizedBox(
                 width: double.infinity,
-                height: 56,
+                height: SizeConfig.responsiveSize(56),
 
                 child: AppButton.primary(
                   icon: const Icon(Icons.email, color: AppColors.white),
@@ -60,7 +59,7 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 16),
+              SizedBox(height: SizeConfig.responsiveSize(16)),
 
               // Or continue with
               const Row(
@@ -83,7 +82,7 @@ class WelcomePage extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 16),
+              SizedBox(height: SizeConfig.responsiveSize(16)),
 
               // Social buttons
               Row(
@@ -100,8 +99,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ],
               ),
-
-              const SizedBox(height: 30),
+              SizedBox(height: SizeConfig.responsiveSize(30)),
             ],
           ),
         ),

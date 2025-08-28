@@ -1,9 +1,10 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:tody/app/home/view/theme_view.dart';
 import 'package:tody/auth/auth.dart';
-import 'package:tody/auth/onboarding/welcome_page.dart';
-import 'package:tody/auth/signup/email_page.dart';
-import 'package:tody/auth/signup/signup_page.dart';
+// import 'package:tody/auth/onboarding/welcome_page.dart';
+// import 'package:tody/auth/signup/email_page.dart';
+// import 'package:tody/auth/signup/signup_page.dart';
 
 class SwipeScreens extends StatelessWidget {
   // <-- add this
@@ -21,7 +22,7 @@ class SwipeScreens extends StatelessWidget {
   }
 }
 
-enum AuthView { login, third, welcome, email, signup }
+enum AuthView { login, third, welcome, email, signup, theme }
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -91,8 +92,9 @@ class _AuthPageState extends State<AuthPage> {
           onContinueWithSignup: () => toggleTo(AuthView.signup),
         );
       case AuthView.signup:
-        return const SignupPage();
+        return SignupPage(onContinueWithTheme: () => toggleTo(AuthView.theme));
+      case AuthView.theme:
+        return const ThemeScreen();
     }
   }
 }
-

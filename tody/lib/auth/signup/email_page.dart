@@ -15,16 +15,17 @@ class EmailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: SizeConfig.responsiveSize(20)),
+
             // Title
-            const Center(
+            Center(
               child: Column(
                 children: [
                   Text(
                     'Welcome Back!',
                     style: TextStyle(
                       color: AppColors.black,
-                      fontSize: 28,
+                      fontSize: SizeConfig.responsiveSize(28),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -33,7 +34,7 @@ class EmailPage extends StatelessWidget {
                     'Your work faster and structured with Todyapp',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: SizeConfig.responsiveSize(14),
                       color: Colors.grey,
                     ),
                   ),
@@ -41,24 +42,25 @@ class EmailPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: SizeConfig.responsiveSize(40)),
 
             // Label
-            const Text(
+            Text(
               'Email Address',
               style: TextStyle(
                 color: AppColors.black,
                 fontWeight: FontWeight.w600,
-                fontSize: 17,
+                fontSize: SizeConfig.responsiveSize(17),
               ),
             ),
-            const SizedBox(height: 8),
+
+            SizedBox(height: SizeConfig.responsiveSize(8)),
 
             // Input
             TextField(
-              style: const TextStyle(
+              style: TextStyle(
                 color: AppColors.black, // ✅ this controls typed text color
-                fontSize: 15,
+                fontSize: SizeConfig.responsiveSize(15),
               ),
               decoration: InputDecoration(
                 hintText: 'name@example.com',
@@ -78,7 +80,7 @@ class EmailPage extends StatelessWidget {
             // Button
             SizedBox(
               width: double.infinity,
-              height: 56,
+              height: SizeConfig.responsiveSize(56),
               child: AppButton.primary(
                 text: 'Next',
                 onPressed: onContinueWithSignup,
