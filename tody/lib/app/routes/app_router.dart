@@ -3,6 +3,7 @@
 // import 'dart:async';
 
 // import 'package:animations/animations.dart';
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -15,6 +16,7 @@ import 'package:tody/auth/onboarding/thirdscreen.dart';
 import 'package:tody/auth/onboarding/welcome_page.dart';
 import 'package:tody/auth/signup/signup_page.dart';
 import 'package:tody/auth/view/auth_view.dart';
+import 'package:tody/home/home.dart';
 
 
 
@@ -144,105 +146,105 @@ class AppRouter {
           //     );
           //   },
           // ),
-          // StatefulShellRoute.indexedStack(
-          //   parentNavigatorKey: _rootNavigatorKey,
-          //   builder: (context, state, navigationShell) {
-          //     return HomePage(navigationShell: navigationShell);
-          //   },
-          //   branches: [
-          //     StatefulShellBranch(
-          //       routes: [
-          //         GoRoute(
-          //           path: AppRoutes.feed.route,
-          //           pageBuilder: (context, state) {
-          //             return CustomTransitionPage(
-          //               key: state.pageKey,
-          //               child: const FeedPage(),
-          //               transitionsBuilder:
-          //                   (context, animation, secondaryAnimation, child) {
-          //                 return SharedAxisTransition(
-          //                   animation: animation,
-          //                   secondaryAnimation: secondaryAnimation,
-          //                   transitionType: SharedAxisTransitionType.horizontal,
-          //                   child: child,
-          //                 );
-          //               },
-          //             );
-          //           },
-          //         ),
-          //       ],
-          //     ),
-          //     StatefulShellBranch(
-          //       routes: [
-          //         GoRoute(
-          //           path: AppRoutes.timeline.route,
-          //           pageBuilder: (context, state) {
-          //             return CustomTransitionPage(
-          //               key: state.pageKey,
-          //               child: const TimelinePage(),
-          //               transitionsBuilder:
-          //                   (context, animation, secondaryAnimation, child) {
-          //                 return FadeTransition(
-          //                   opacity: CurveTween(
-          //                     curve: Curves.easeInOut,
-          //                   ).animate(animation),
-          //                   child: child,
-          //                 );
-          //               },
-          //             );
-          //           },
-          //           routes: [
-          //             GoRoute(
-          //               name: AppRoutes.search.name,
-          //               path: AppRoutes.search.name,
-          //               parentNavigatorKey: _rootNavigatorKey,
-          //               pageBuilder: (context, state) {
-          //                 final withResult = state.extra as bool?;
+          StatefulShellRoute.indexedStack(
+            parentNavigatorKey: _rootNavigatorKey,
+            builder: (context, state, navigationShell) {
+              return HomePage(navigationShell: navigationShell);
+            },
+            branches: [
+              StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                    path: AppRoutes.feed.route,
+                    pageBuilder: (context, state) {
+                      return CustomTransitionPage(
+                        key: state.pageKey,
+                        child: const Center(child: Text('Feed Page')),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          return SharedAxisTransition(
+                            animation: animation,
+                            secondaryAnimation: secondaryAnimation,
+                            transitionType: SharedAxisTransitionType.horizontal,
+                            child: child,
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
+              StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                    path: AppRoutes.timeline.route,
+                    pageBuilder: (context, state) {
+                      return CustomTransitionPage(
+                        key: state.pageKey,
+                        child: const Center(child: Text('Timeline')), //const TimelinePage(),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: CurveTween(
+                              curve: Curves.easeInOut,
+                            ).animate(animation),
+                            child: child,
+                          );
+                        },
+                      );
+                    },
+                    routes: [
+                      GoRoute(
+                        name: AppRoutes.search.name,
+                        path: AppRoutes.search.name,
+                        parentNavigatorKey: _rootNavigatorKey,
+                        pageBuilder: (context, state) {
+                          // final withResult = state.extra as bool?;
 
-          //                 return NoTransitionPage(
-          //                   key: state.pageKey,
-          //                   child: SearchPage(withResult: withResult),
-          //                 );
-          //               },
-          //             ),
-          //           ],
-          //         ),
-          //       ],
-          //     ),
-          //     StatefulShellBranch(
-          //       routes: [
-          //         /// This route doesn't return anything and doesn't throws an
-          //         /// Exception, because we ignore it if we tap of 2nd tab in
-          //         /// bottom nav bar. Instead, we execute a function to switch
-          //         /// a page in the `PageView`.
-          //         GoRoute(
-          //           path: AppRoutes.createMedia.route,
-          //           redirect: (context, state) => null,
-          //         ),
-          //       ],
-          //     ),
-          //     StatefulShellBranch(
-          //       routes: [
-          //         GoRoute(
-          //           path: AppRoutes.reels.route,
-          //           pageBuilder: (context, state) {
-          //             return CustomTransitionPage(
-          //               key: state.pageKey,
-          //               child: const ReelsView(),
-          //               transitionsBuilder:
-          //                   (context, animation, secondaryAnimation, child) {
-          //                 return FadeTransition(
-          //                   opacity: CurveTween(
-          //                     curve: Curves.easeInOut,
-          //                   ).animate(animation),
-          //                   child: child,
-          //                 );
-          //               },
-          //             );
-          //           },
-          //         ),
-          //       ],
-          //     ),
+                          return NoTransitionPage(
+                            key: state.pageKey,
+                            child: const Center(child: Text('Search')),// SearchPage(withResult: withResult),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              StatefulShellBranch(
+                routes: [
+                  /// This route doesn't return anything and doesn't throws an
+                  /// Exception, because we ignore it if we tap of 2nd tab in
+                  /// bottom nav bar. Instead, we execute a function to switch
+                  /// a page in the `PageView`.
+                  GoRoute(
+                    path: AppRoutes.createMedia.route,
+                    redirect: (context, state) => null,
+                  ),
+                ],
+              ),
+              StatefulShellBranch(
+                routes: [
+                  GoRoute(
+                    path: AppRoutes.reels.route,
+                    pageBuilder: (context, state) {
+                      return CustomTransitionPage(
+                        key: state.pageKey,
+                        child: const Center(child: Text('Reels View')), //ReelsView(),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          return FadeTransition(
+                            opacity: CurveTween(
+                              curve: Curves.easeInOut,
+                            ).animate(animation),
+                            child: child,
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
           //     StatefulShellBranch(
           //       routes: [
           //         GoRoute(
@@ -497,8 +499,8 @@ class AppRouter {
           //         ),
           //       ],
           //     ),
-          //   ],
-          // ),
+            ],
+          ),
         ],
         // redirect: (context, state) {
         //   final authenticated = appBloc.state.status == AppStatus.authenticated;

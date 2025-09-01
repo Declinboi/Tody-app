@@ -25,6 +25,7 @@ dependencies:
   path_provider: ^2.1.5
   hydrated_bloc: ^10.1.1
   formz: ^0.8.0
+  provider: ^6.1.5+1
 
 dev_dependencies:
   bloc_test: ^10.0.0

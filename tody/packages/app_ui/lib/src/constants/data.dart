@@ -9,14 +9,14 @@ List<NavBarItem> mainNavigationBarItems({
   required String createMediaLabel,
   required String reelsLabel,
   required String userProfileLabel,
-  required Widget userProfileAvatar,
+  // required Widget userProfileAvatar,
 }) =>
     <NavBarItem>[
       NavBarItem(icon: Icons.home_filled, label: homeLabel),
       NavBarItem(icon: Icons.search, label: searchLabel),
       NavBarItem(icon: Icons.add_box_outlined, label: createMediaLabel),
       NavBarItem(icon: Icons.video_collection_outlined, label: reelsLabel),
-      NavBarItem(child: userProfileAvatar, label: userProfileLabel),
+      // NavBarItem(child: userProfileAvatar, label: userProfileLabel),
     ];
 
 class NavBarItem {

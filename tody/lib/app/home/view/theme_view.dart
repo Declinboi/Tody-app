@@ -1,5 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tody/app/app.dart';
 
 class ThemeScreen extends StatefulWidget {
   const ThemeScreen({super.key});
@@ -73,7 +75,9 @@ class _TodoThemeScreenState extends State<ThemeScreen> {
               child: AppButton.primary(
                 text: 'Open Todyapp',
                 onPressed: () {
-                  // Navigate to the next screen or perform an action
+                  context.go(
+                    AppRoutes.feed.route,
+                  ); // Navigate to the next screen or perform an action
                 },
               ),
             ),
@@ -133,7 +137,7 @@ class _TodoThemeScreenState extends State<ThemeScreen> {
             ],
           ),
         ),
-        // ✅ FIXED: removed const, headerColor works now
+
         if (isSelected)
           Positioned(
             top: -10,
