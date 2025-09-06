@@ -41,7 +41,7 @@ class AppView extends StatelessWidget {
                   },
                   themeMode: themeMode,
                   theme: const AppTheme().theme,
-                  darkTheme: const AppDarkTheme().theme,
+                  // darkTheme: const AppDarkTheme().theme,
                   locale: locale,
                   localizationsDelegates:
                       AppLocalizations.localizationsDelegates,
